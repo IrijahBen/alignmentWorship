@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volunteer Registration | Alignment Worship Experience Ibadan</title>
+    <meta name="description" content="Register to serve as a volunteer at Alignment Worship Experience with Adeleke Afolayan. Sunday 22nd November 2026, 3:00pm WAT, Ibadan.">
+    <meta name="theme-color" content="#05061b">
+    <meta property="og:title" content="Alignment Worship Experience: Volunteer Registration">
+    <meta property="og:description" content="Serve with us at Alignment Worship Experience, Ibadan. Sunday 22nd November 2026, 3:00pm WAT.">
+    <meta property="og:image" content="alignment-flyer.jpg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Extra+Condensed:ital,wght@1,800;1,900&family=Sofia+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --night: #05061b;
+            --panel: #090b30;
+            --field: #10134a;
+            --field-hover: #151a5c;
+            --royal: #1f2cc4;
+            --glow: #6f7dff;
+            --frost: #eef0ff;
+            --mist: #a8aedb;
+            --line: rgba(190, 198, 255, 0.18);
+            --danger: #ffb1b1;
+            --display: 'Sofia Sans Extra Condensed', 'Arial Narrow', Impact, sans-serif;
+            --body: 'Sofia Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; }
+        html { -webkit-text-size-adjust: 100%; }
+        body {
+            margin: 0;
+            background: var(--night);
+            color: var(--frost);
+            font-family: var(--body);
+            font-size: 17px;
+            line-height: 1.5;
+            min-height: 100svh;
+        }
+
+        /* Film grain, echoing the flyer texture */
+        body::before {
+            content: '';
+            position: fixed; inset: 0; z-index: 50; pointer-events: none;
+            opacity: 0.07; mix-blend-mode: overlay;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+        }
+
+        .sr-only {
+            position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0;
+            overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+        }
+
+        /* ---------- LAYOUT ---------- */
+        .page { display: block; }
+
+        .poster { background: var(--night); }
+        .poster picture { display: block; }
+        .poster img {
+            display: block; width: 100%; height: auto;
+            -webkit-mask-image: linear-gradient(to bottom, #000 97%, transparent 100%);
+                    mask-image: linear-gradient(to bottom, #000 97%, transparent 100%);
+        }
+
+        .form-side { background: var(--panel); padding: 8px 20px 56px; }
+        .form-wrap { max-width: 560px; margin: 0 auto; }
+
+        @media (min-width: 960px) {
+            .page { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-height: 100svh; }
+            .poster {
+                position: sticky; top: 0; height: 100svh;
+                display: flex; align-items: center; justify-content: center;
+            }
+            .poster img {
+                width: auto; max-width: 100%; max-height: 100svh; object-fit: contain;
+                -webkit-mask-image: linear-gradient(to right, #000 86%, transparent 100%), linear-gradient(to bottom, transparent 0, #000 3%);
+                -webkit-mask-composite: source-in;
+                        mask-image: linear-gradient(to right, #000 86%, transparent 100%), linear-gradient(to bottom, transparent 0, #000 3%);
+                        mask-composite: intersect;
+            }
+            .form-side { padding: 64px 48px 80px; border-left: 1px solid var(--line); }
+            .form-wrap { margin: 0; }
+        }
+
+        /* ---------- HEADING ---------- */
+        .event-name {
+            display: inline-block; margin: 28px 0 0;
+            padding: 6px 14px 5px;
+            background: var(--royal); color: #fff;
+            font: italic 800 1.15rem/1 var(--display);
+            letter-spacing: 0.06em; text-transform: uppercase;
+        }
+        h1 {
+            margin: 14px 0 0;
+            font: italic 900 clamp(2.6rem, 8vw, 3.9rem)/0.92 var(--display);
+            text-transform: uppercase; letter-spacing: 0.005em;
+        }
+        .when { margin: 14px 0 0; font-size: 0.95rem; color: var(--mist); }
+        .intro p { margin: 18px 0 0; color: #dfe2ff; max-width: 60ch; }
+
+        /* ---------- PROGRESS ---------- */
+        .progress { list-style: none; display: flex; gap: 8px; margin: 32px 0 0; padding: 0; }
+        .progress li {
+            flex: 1; padding-top: 10px; border-top: 3px solid var(--line);
+            color: var(--mist); font-size: 0.9rem; font-weight: 600; line-height: 1.2;
+        }
+        .progress li[aria-current="step"] { border-color: var(--glow); color: var(--frost); }
+        .progress li.done { border-color: var(--royal); color: var(--frost); }
+        .progress .n { display: block; font-size: 0.8rem; font-weight: 500; color: var(--mist); margin-bottom: 2px; }
+        .progress li[aria-current="step"] .n { color: var(--glow); }
+
+        /* ---------- FORM ---------- */
+        form { margin-top: 28px; }
+        .step[hidden] { display: none; }
+        .step { animation: stepIn 0.28s ease-out; }
+        @keyframes stepIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+
+        .step-title {
+            position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0;
+            overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+        }
+
+        .field { margin: 0 0 22px; padding: 0; border: 0; min-width: 0; }
+        .field > label, .field > legend {
+            display: block; padding: 0; margin: 0 0 8px;
+            font-size: 1rem; font-weight: 600; color: var(--frost);
+        }
+        .hint { margin: -4px 0 10px; font-size: 0.9rem; color: var(--mist); }
+        .opt { font-weight: 400; color: var(--mist); }
+
+        input[type="text"], input[type="email"], input[type="tel"], textarea {
+            width: 100%; padding: 14px 14px;
+            background: var(--field); color: var(--frost);
+            border: 1px solid var(--line); border-radius: 2px;
+            font: inherit; font-size: 1rem;
+            transition: border-color 0.15s, background-color 0.15s;
+        }
+        textarea { min-height: 120px; resize: vertical; }
+        input[type="text"]:hover, input[type="email"]:hover, input[type="tel"]:hover, textarea:hover { background: var(--field-hover); }
+        input:focus-visible, textarea:focus-visible { outline: 2px solid var(--glow); outline-offset: 2px; border-color: var(--glow); }
+        [aria-invalid="true"] { border-color: var(--danger) !important; }
+
+        .choices { display: grid; gap: 8px; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+        .choices.stack { grid-template-columns: 1fr; }
+
+        .choice {
+            position: relative; display: flex; align-items: center; gap: 12px;
+            padding: 13px 14px; cursor: pointer;
+            background: var(--field); border: 1px solid var(--line); border-radius: 2px;
+            transition: background-color 0.15s, border-color 0.15s;
+            line-height: 1.3;
+        }
+        .choice:hover { background: var(--field-hover); }
+        .choice input {
+            appearance: none; -webkit-appearance: none; flex: none;
+            width: 20px; height: 20px; margin: 0;
+            border: 2px solid var(--mist); border-radius: 50%;
+            display: grid; place-content: center; background: transparent;
+        }
+        .choice input[type="checkbox"] { border-radius: 2px; }
+        .choice input::before {
+            content: ''; width: 10px; height: 10px; border-radius: 50%;
+            background: #fff; transform: scale(0); transition: transform 0.12s;
+        }
+        .choice input[type="checkbox"]::before { border-radius: 1px; }
+        .choice input:checked { border-color: #fff; }
+        .choice input:checked::before { transform: scale(1); }
+        .choice:has(input:checked) { background: var(--royal); border-color: var(--royal); color: #fff; }
+        .choice:has(input:focus-visible) { outline: 2px solid var(--glow); outline-offset: 2px; }
+
+        .field-error { margin: 8px 0 0; font-size: 0.92rem; color: var(--danger); }
+        .field-error[hidden] { display: none; }
+
+        .actions { display: flex; gap: 12px; margin-top: 30px; }
+        .btn {
+            flex: 1; padding: 15px 20px; border: 1px solid transparent; border-radius: 2px;
+            font: 700 1.05rem/1.1 var(--body); cursor: pointer; text-align: center;
+            transition: background-color 0.15s, border-color 0.15s, opacity 0.15s;
+        }
+        .btn-primary { background: var(--royal); color: #fff; }
+        .btn-primary:hover { background: #2a38e0; }
+        .btn-ghost { background: transparent; color: var(--frost); border-color: var(--line); flex: 0 0 auto; padding-inline: 26px; }
+        .btn-ghost:hover { border-color: var(--mist); }
+        .btn:focus-visible { outline: 2px solid var(--glow); outline-offset: 2px; }
+        .btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+        .form-error {
+            margin-top: 18px; padding: 12px 14px; font-size: 0.95rem;
+            color: var(--danger); background: rgba(255, 120, 120, 0.09);
+            border-left: 3px solid var(--danger);
+        }
+        .form-error[hidden] { display: none; }
+
+        .trap { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+        /* ---------- THANK YOU ---------- */
+        .thanks[hidden] { display: none; }
+        .thanks { margin-top: 28px; animation: stepIn 0.4s ease-out; }
+        .thanks h2 { margin: 0; font: italic 900 clamp(3rem, 10vw, 4.6rem)/0.9 var(--display); text-transform: uppercase; }
+        .thanks p { margin: 18px 0 0; max-width: 56ch; color: #dfe2ff; }
+        .thanks .sign {
+            margin-top: 30px; padding: 18px 20px; background: var(--royal); color: #fff;
+        }
+        .thanks .sign strong { display: block; font: italic 800 1.35rem/1.05 var(--display); text-transform: uppercase; letter-spacing: 0.03em; }
+        .thanks .sign span { display: block; margin-top: 8px; font-size: 0.98rem; color: #dfe4ff; }
+        .link-btn { margin-top: 26px; background: none; border: 0; padding: 0; color: var(--glow); font: 600 1rem var(--body); text-decoration: underline; text-underline-offset: 4px; cursor: pointer; }
+        .link-btn:focus-visible { outline: 2px solid var(--glow); outline-offset: 4px; }
+
+        @media (max-width: 420px) {
+            .form-side { padding-inline: 16px; }
+            .actions { flex-direction: column-reverse; }
+            .btn-ghost { flex: 1; }
+            .progress li { font-size: 0.82rem; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .step, .thanks { animation: none; }
+            * { transition-duration: 0.01ms !important; }
+        }
+    </style>
+</head>
+<body>
+    <noscript><p style="padding:20px;background:#fff;color:#000">This form needs JavaScript. Please turn it on and reload the page.</p></noscript>
+
+    <div class="page">
+        <aside class="poster">
+            <picture>
+                <source srcset="alignment-flyer.webp" type="image/webp">
+                <img src="alignment-flyer.jpg" width="1290" height="1406"
+                     alt="Alignment Worship Experience Ibadan, with Adeleke Afolayan. 3:00pm WAT, Sunday 22nd November 2026. RCCG Jesus Protege, Former Cowbell Building, Oke-Bola, Ogunpa, Ibadan. Instagram: alignmentworshipexperience.">
+            </picture>
+        </aside>
+
+        <main class="form-side">
+            <div class="form-wrap">
+                <div id="form-view">
+                    <p class="event-name">Alignment Worship Experience</p>
+                    <h1>Volunteer registration form</h1>
+                    <p class="when">Sunday 22nd November 2026, 3:00pm WAT. RCCG Jesus Protege, Oke-Bola, Ogunpa, Ibadan.</p>
+
+                    <div class="intro" id="intro">
+                        <p>Thank you for your interest in serving at Alignment Worship Experience. This gathering is committed to creating an atmosphere where people encounter God through worship, realign with His heart and will, and walk in His purpose.</p>
+                        <p>Please complete this form to help us coordinate our volunteers and prepare for the upcoming volunteers’ meeting.</p>
+                    </div>
+
+                    <ol class="progress" aria-label="Form progress">
+                        <li id="p1" aria-current="step"><span class="n">Step 1 of 3</span>About you</li>
+                        <li id="p2"><span class="n">Step 2 of 3</span>Where you will serve</li>
+                        <li id="p3"><span class="n">Step 3 of 3</span>Commitment</li>
+                    </ol>
+
+                    <form id="volunteerForm" novalidate>
+                        <!-- STEP 1 -->
+                        <section class="step" id="step-1" aria-labelledby="t1">
+                            <h2 class="step-title" id="t1" tabindex="-1">About you</h2>
+
+                            <div class="field">
+                                <label for="fullName">Full Name</label>
+                                <input type="text" id="fullName" name="fullName" autocomplete="name" required data-msg="Enter your full name.">
+                                <p class="field-error" id="err-fullName" hidden></p>
+                            </div>
+
+                            <div class="field">
+                                <label for="phone">Phone Number (WhatsApp Preferred)</label>
+                                <input type="tel" id="phone" name="phone" inputmode="tel" autocomplete="tel" required data-msg="Enter your phone number.">
+                                <p class="field-error" id="err-phone" hidden></p>
+                            </div>
+
+                            <div class="field">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" autocomplete="email" required data-msg="Enter your email address.">
+                                <p class="field-error" id="err-email" hidden></p>
+                            </div>
+
+                            <fieldset class="field" data-group="gender" data-msg="Choose one option.">
+                                <legend>Gender</legend>
+                                <div class="choices">
+                                    <label class="choice"><input type="radio" name="gender" value="Male"><span>Male</span></label>
+                                    <label class="choice"><input type="radio" name="gender" value="Female"><span>Female</span></label>
+                                    <label class="choice"><input type="radio" name="gender" value="Prefer not to say"><span>Prefer not to say</span></label>
+                                </div>
+                                <p class="field-error" id="err-gender" hidden></p>
+                            </fieldset>
+
+                            <div class="field">
+                                <label for="church">Church or Ministry You Attend</label>
+                                <input type="text" id="church" name="church" autocomplete="off" required data-msg="Enter the church or ministry you attend.">
+                                <p class="field-error" id="err-church" hidden></p>
+                            </div>
+
+                            <div class="field">
+                                <label for="location">Location/Area of Residence</label>
+                                <input type="text" id="location" name="location" autocomplete="off" required data-msg="Enter the area where you live.">
+                                <p class="field-error" id="err-location" hidden></p>
+                            </div>
+
+                            <div class="actions">
+                                <button type="button" class="btn btn-primary" data-next>Continue</button>
+                            </div>
+                        </section>
+
+                        <!-- STEP 2 -->
+                        <section class="step" id="step-2" aria-labelledby="t2" hidden>
+                            <h2 class="step-title" id="t2" tabindex="-1">Where you will serve</h2>
+
+                            <fieldset class="field" data-group="department" data-msg="Choose a department.">
+                                <legend>Which department would you like to serve in?</legend>
+                                <p class="hint">Select your preferred department.</p>
+                                <div class="choices stack">
+                                    <label class="choice"><input type="radio" name="department" value="Protocol and Guest Relations"><span>Protocol and Guest Relations</span></label>
+                                    <label class="choice"><input type="radio" name="department" value="Media and Publicity"><span>Media and Publicity</span></label>
+                                    <label class="choice"><input type="radio" name="department" value="Photography and Videography"><span>Photography and Videography</span></label>
+                                    <label class="choice"><input type="radio" name="department" value="Technical Team (Sound, Lighting and Stage Management)"><span>Technical Team (Sound, Lighting and Stage Management)</span></label>
+                                    <label class="choice"><input type="radio" name="department" value="Welfare and Hospitality"><span>Welfare and Hospitality</span></label>
+                                    <label class="choice"><input type="radio" name="department" value="Logistics and Operations"><span>Logistics and Operations</span></label>
+                                    <label class="choice"><input type="radio" name="department" value="Prayer Team/Intercessors"><span>Prayer Team/Intercessors</span></label>
+                                    <label class="choice"><input type="radio" name="department" value="Ushering"><span>Ushering</span></label>
+                                </div>
+                                <p class="field-error" id="err-department" hidden></p>
+                            </fieldset>
+
+                            <fieldset class="field" data-group="experience" data-msg="Choose Yes or No.">
+                                <legend>Do you have any previous volunteering or ministry experience?</legend>
+                                <div class="choices">
+                                    <label class="choice"><input type="radio" name="experience" value="Yes"><span>Yes</span></label>
+                                    <label class="choice"><input type="radio" name="experience" value="No"><span>No</span></label>
+                                </div>
+                                <p class="field-error" id="err-experience" hidden></p>
+                            </fieldset>
+
+                            <fieldset class="field" data-group="availability" data-msg="Choose Yes or No.">
+                                <legend>Are you available to attend the volunteers’ meeting?</legend>
+                                <div class="choices">
+                                    <label class="choice"><input type="radio" name="availability" value="Yes"><span>Yes</span></label>
+                                    <label class="choice"><input type="radio" name="availability" value="No"><span>No</span></label>
+                                </div>
+                                <p class="field-error" id="err-availability" hidden></p>
+                            </fieldset>
+
+                            <div class="actions">
+                                <button type="button" class="btn btn-ghost" data-back>Back</button>
+                                <button type="button" class="btn btn-primary" data-next>Continue</button>
+                            </div>
+                        </section>
+
+                        <!-- STEP 3 -->
+                        <section class="step" id="step-3" aria-labelledby="t3" hidden>
+                            <h2 class="step-title" id="t3" tabindex="-1">Commitment</h2>
+
+                            <fieldset class="field" data-group="willingness" data-msg="Choose Yes or No.">
+                                <legend>Are you willing to work with other team members, respect leadership, and carry out assigned responsibilities faithfully?</legend>
+                                <div class="choices">
+                                    <label class="choice"><input type="radio" name="willingness" value="Yes"><span>Yes</span></label>
+                                    <label class="choice"><input type="radio" name="willingness" value="No"><span>No</span></label>
+                                </div>
+                                <p class="field-error" id="err-willingness" hidden></p>
+                            </fieldset>
+
+                            <div class="field">
+                                <label for="notes">Is there anything else you would like the organising team to know? <span class="opt">(Optional)</span></label>
+                                <textarea id="notes" name="notes" maxlength="1500"></textarea>
+                            </div>
+
+                            <fieldset class="field" data-group="consent" data-msg="Please confirm to submit your registration.">
+                                <legend>Please confirm your willingness to be contacted regarding the volunteers’ meeting and further information about your area of service.</legend>
+                                <div class="choices stack">
+                                    <label class="choice"><input type="checkbox" name="consent" value="Yes, I agree."><span>Yes, I agree.</span></label>
+                                </div>
+                                <p class="field-error" id="err-consent" hidden></p>
+                            </fieldset>
+
+                            <div class="trap" aria-hidden="true">
+                                <label>Leave this field empty <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+                            </div>
+
+                            <div class="form-error" id="form-error" role="alert" hidden></div>
+
+                            <div class="actions">
+                                <button type="button" class="btn btn-ghost" data-back>Back</button>
+                                <button type="submit" class="btn btn-primary" id="submitBtn">Submit registration</button>
+                            </div>
+                        </section>
+                    </form>
+                </div>
+
+                <!-- THANK YOU -->
+                <section class="thanks" id="thanks" aria-labelledby="thanks-title" hidden>
+                    <h2 id="thanks-title" tabindex="-1">Thank you!</h2>
+                    <p>Thank you for expressing interest in serving at Alignment Worship Experience.</p>
+                    <p>We believe that every act of service contributes to the fulfilment of this vision. We look forward to working together to create an atmosphere where hearts align with God’s will and lives are transformed through worship.</p>
+                    <div class="sign">
+                        <strong>Alignment Worship Experience with Adeleke Afolayan</strong>
+                        <span>Where Hearts Align with Heaven and Lives Are Positioned for God’s Purpose.</span>
+                    </div>
+                    <button type="button" class="link-btn" id="againBtn">Register another volunteer</button>
+                </section>
+            </div>
+        </main>
+    </div>
+
+<script>
+    // ==========================================
+    // 1. CONFIGURATION
+    // Paste the Web App URL from your Google Apps Script deployment here (see README.md).
+    // ==========================================
+    const SCRIPT_URL = 'PASTE_YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE';
+
+    // ==========================================
+    // 2. ELEMENTS + STATE
+    // ==========================================
+    const form = document.getElementById('volunteerForm');
+    const steps = [...document.querySelectorAll('.step')];
+    const dots = [document.getElementById('p1'), document.getElementById('p2'), document.getElementById('p3')];
+    const intro = document.getElementById('intro');
+    const formError = document.getElementById('form-error');
+    const submitBtn = document.getElementById('submitBtn');
+    let current = 0;
+
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // ==========================================
+    // 3. VALIDATION
+    // ==========================================
+    function setError(el, message) {
+        const id = el.dataset.group ? 'err-' + el.dataset.group : 'err-' + el.id;
+        const box = document.getElementById(id);
+        if (!box) return;
+        if (message) {
+            box.textContent = message;
+            box.hidden = false;
+            if (el.matches('input, textarea')) {
+                el.setAttribute('aria-invalid', 'true');
+                el.setAttribute('aria-describedby', id);
+            }
+        } else {
+            box.hidden = true;
+            if (el.matches('input, textarea')) {
+                el.removeAttribute('aria-invalid');
+                el.removeAttribute('aria-describedby');
+            }
+        }
+    }
+
+    function textProblem(el) {
+        const v = el.value.trim();
+        if (!v) return el.dataset.msg || 'This field is required.';
+        if (el.id === 'fullName' && v.length < 2) return 'Enter your full name.';
+        if (el.id === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)) return 'Enter a valid email address, like name@example.com.';
+        if (el.id === 'phone') {
+            const digits = v.replace(/[\s\-().+]/g, '');
+            if (!/^\d{10,15}$/.test(digits)) return 'Enter a valid phone number with 10 to 15 digits.';
+        }
+        return '';
+    }
+
+    function groupProblem(group) {
+        const checked = group.querySelector('input:checked');
+        return checked ? '' : group.dataset.msg || 'Choose an option.';
+    }
+
+    // Returns the first invalid element in the step, or null.
+    function validateStep(index) {
+        const section = steps[index];
+        let firstBad = null;
+
+        section.querySelectorAll('input[required]').forEach((el) => {
+            const problem = textProblem(el);
+            setError(el, problem);
+            if (problem && !firstBad) firstBad = el;
+        });
+
+        section.querySelectorAll('fieldset[data-group]').forEach((group) => {
+            const problem = groupProblem(group);
+            setError(group, problem);
+            if (problem && !firstBad) firstBad = group.querySelector('input');
+        });
+
+        return firstBad;
+    }
+
+    // Clear an error as soon as the person fixes it.
+    form.addEventListener('input', (e) => {
+        const el = e.target;
+        if (el.matches('input[required]') && !textProblem(el)) setError(el, '');
+    });
+    form.addEventListener('change', (e) => {
+        const group = e.target.closest('fieldset[data-group]');
+        if (group && !groupProblem(group)) setError(group, '');
+    });
+
+    // ==========================================
+    // 4. STEP NAVIGATION
+    // ==========================================
+    function show(index) {
+        current = index;
+        steps.forEach((s, i) => { s.hidden = i !== index; });
+        dots.forEach((d, i) => {
+            d.classList.toggle('done', i < index);
+            if (i === index) d.setAttribute('aria-current', 'step'); else d.removeAttribute('aria-current');
+        });
+        intro.hidden = index !== 0;
+
+        const title = steps[index].querySelector('.step-title');
+        document.querySelector('.progress').scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+        title.focus({ preventScroll: true });
+    }
+
+    form.addEventListener('click', (e) => {
+        if (e.target.closest('[data-next]')) {
+            const bad = validateStep(current);
+            if (bad) { bad.focus(); return; }
+            show(current + 1);
+        } else if (e.target.closest('[data-back]')) {
+            show(current - 1);
+        }
+    });
+
+    // Enter in a text field moves forward instead of submitting early.
+    form.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' && e.target.matches('input[type="text"], input[type="email"], input[type="tel"]') && current < steps.length - 1) {
+            e.preventDefault();
+            steps[current].querySelector('[data-next]').click();
+        }
+    });
+
+    // ==========================================
+    // 5. SUBMISSION
+    // ==========================================
+    function showFormError(message) {
+        formError.textContent = message;
+        formError.hidden = false;
+    }
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        formError.hidden = true;
+
+        // Check every step so nothing slips through.
+        for (let i = 0; i < steps.length; i++) {
+            const bad = validateStep(i);
+            if (bad) { if (i !== current) show(i); bad.focus(); return; }
+        }
+
+        if (form.elements.website.value) { showThanks(); return; } // spam trap
+
+        if (SCRIPT_URL.startsWith('PASTE_')) {
+            showFormError('This form is not connected to a spreadsheet yet. Add your Google Apps Script web app URL in index.html (see README.md), then try again.');
+            return;
+        }
+
+        const data = new FormData(form);
+        const payload = new URLSearchParams();
+        ['fullName', 'phone', 'email', 'gender', 'church', 'location', 'department', 'experience', 'availability', 'willingness', 'notes', 'consent']
+            .forEach((key) => payload.append(key, (data.get(key) || '').toString().trim()));
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Submitting...';
+
+        try {
+            const controller = new AbortController();
+            const timer = setTimeout(() => controller.abort(), 25000);
+            const res = await fetch(SCRIPT_URL, { method: 'POST', body: payload, signal: controller.signal });
+            clearTimeout(timer);
+            const result = await res.json();
+
+            if (result.result === 'success') {
+                showThanks();
+            } else if (result.result === 'duplicate') {
+                show(0);
+                const emailEl = document.getElementById('email');
+                setError(emailEl, 'This email address is already registered as a volunteer. Use a different email, or contact the organising team to update your details.');
+                emailEl.focus();
+                resetSubmit();
+            } else {
+                showFormError('We could not save your registration. ' + (result.message ? '(' + result.message + ') ' : '') + 'Please try again in a moment.');
+                resetSubmit();
+            }
+        } catch (err) {
+            showFormError('We could not send your registration. Check your internet connection, then select Submit registration again.');
+            resetSubmit();
+        }
+    });
+
+    function resetSubmit() {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Submit registration';
+    }
+
+    function showThanks() {
+        document.getElementById('form-view').hidden = true;
+        const thanks = document.getElementById('thanks');
+        thanks.hidden = false;
+        window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+        document.getElementById('thanks-title').focus({ preventScroll: true });
+    }
+
+    document.getElementById('againBtn').addEventListener('click', () => {
+        form.reset();
+        form.querySelectorAll('[aria-invalid]').forEach((el) => setError(el, ''));
+        resetSubmit();
+        formError.hidden = true;
+        document.getElementById('thanks').hidden = true;
+        document.getElementById('form-view').hidden = false;
+        show(0);
+    });
+</script>
+</body>
+</html>
